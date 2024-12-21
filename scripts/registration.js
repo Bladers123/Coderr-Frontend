@@ -1,7 +1,7 @@
 function checkAuth(){
-    if(getAuthToken()){
-        window.location.href = "./index.html";
-    }
+    // if(getAuthToken()){
+    //     window.location.href = "./index.html";
+    // }
 }
 
 function registerSubmit(event){
