@@ -9,22 +9,18 @@ async function logIn(formData) {
         showFormErrors(['error_pw']);
     } else {
         setAuthCredentials(response.data.token, response.data.user_id, response.data.username)
-        console.log(response.data.token, response.data.user_id, response.data.username);
-
-        // window.location.href = "./offer_list.html"
+        window.location.href = "./offer_list.html"
     }
 }
 
 async function registration(data) {
-    let response = await postDataWJSON(REGISTER_URL, data); 
+    let response = await postDataWJSON(REGISTER_URL, data);     
     if(!response.ok){
         let errorArr = extractErrorMessages(response.data)
         showToastMessage(true, errorArr)
     } else {        
-        setAuthCredentials(response.data.token, response.data.user_id, response.data.username) 
-        console.log(response.data.token, response.data.user_id, response.data.username);
-       
-        // window.location.href = "./offer_list.html"
+        setAuthCredentials(response.data.token, response.data.user_id, response.data.username)        
+        window.location.href = "./offer_list.html"
     }
 }
 

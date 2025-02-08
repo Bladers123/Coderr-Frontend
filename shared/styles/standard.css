@@ -188,8 +188,12 @@ main {
     text-align: center;
 }
 
-.rotate_half{
+.rotate_half {
     transform: rotate(180deg);
+}
+
+.private_policy_padding {
+    padding: 0px 100px 50px 100px;
 }
 
 

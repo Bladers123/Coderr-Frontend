@@ -99,7 +99,6 @@ async function onOfferSubmit(event) {
 }
 
 async function addOfferSubmit(form) {
-
     const data = getFormData(form);
 
     if (validateEmptyFields(form, data)) {

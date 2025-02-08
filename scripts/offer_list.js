@@ -20,7 +20,7 @@ async function offerListInit() {
 }
 
 function renderOfferList() {
-    let listRef = document.getElementById("offer_list_content");
+    let listRef = document.getElementById("offer_list_content");    
     listRef.innerHTML = getOfferTemplateList(currentOffers) + getOfferPagination(calculateNumPages(allOffersLength, PAGE_SIZE), currentOfferListFilter.page);
 }
 

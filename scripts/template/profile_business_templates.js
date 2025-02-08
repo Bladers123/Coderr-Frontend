@@ -178,7 +178,7 @@ function getOrderRevisionTemplate(revisions){
     }
 }
 
-function getBusinessProfileTemplate(currentUser) {
+function getBusinessProfileTemplate(currentUser) {    
     if (!currentUser) {
         return `<div>Profilinformationen sind nicht verfügbar.</div>`;
     }

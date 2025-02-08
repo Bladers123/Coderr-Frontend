@@ -1,4 +1,8 @@
-function getOfferTemplateList(offers){
+
+
+
+
+function getOfferTemplateList(offers){    
     if (!Array.isArray(offers)) {
         return '<p>Fehler beim Laden der Angebote</p>';
     }

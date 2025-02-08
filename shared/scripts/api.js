@@ -57,16 +57,16 @@ function createHeaders() {
 }
 
 
-async function getData(endpoint) {
-    if(!endpoint){
-        debugger
-    }
+async function getData(endpoint) {    
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
             method: 'GET',
             headers: createHeaders(),
         });
+        console.log("Endpunkt: ", API_BASE_URL + endpoint);
+        
         const responseData = await response.json();
+                
         return {
             ok: response.ok,
             status: response.status,
@@ -107,9 +107,10 @@ async function postData(endpoint, data) {
 }
 
 async function postDataWJSON(endpoint, data) {
-    
     let header = createHeaders();
     header['Content-Type'] = 'application/json';
+    console.log("Daten für POST verschickt werden: ", data);
+    
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
             method: 'POST',
@@ -118,6 +119,7 @@ async function postDataWJSON(endpoint, data) {
         });
         
         const responseData = await response.json();
+        
         return {
             ok: response.ok,
             status: response.status,

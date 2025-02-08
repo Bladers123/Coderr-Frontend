@@ -81,7 +81,6 @@ function formatDate(dateString) {
 }
 
 function getPersonImgPath(filepath) {
-
     if (filepath) {
         return STATIC_BASE_URL + filepath
     } else {

@@ -30,7 +30,7 @@ async function loadCustomerUser() {
     if (!profileId) {
         window.location.href = 'index.html';
     } else {
-        let resp = await getData(PROFILE_URL + profileId + "/")
+        let resp = await getData(PROFILE_URL + profileId + "/")        
         if (resp.ok) {
             if (resp.data.type == "customer") {
                 currentCustomerUser = resp.data

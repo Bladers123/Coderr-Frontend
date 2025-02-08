@@ -1,8 +1,8 @@
 let currentSingleOfferUser = null;
 let currentOpenedDetail;
 let currentOfferCount = 0;
-async function singleOfferInit() {
-    
+
+async function singleOfferInit() {    
     await setCurrentUser();
     toggleReviewAddBtn()
     await loadRenderSingleOffer()
@@ -12,10 +12,12 @@ async function singleOfferInit() {
 async function loadRenderSingleOffer() {
     const urlParams = new URLSearchParams(window.location.search);
     const profileId = urlParams.get('id');
+    
     if (!profileId) {
         window.location.href = 'index.html';
     } else {
         let offerResp = await setSingleOffer(profileId);
+        
         if (offerResp.ok) {
             await loadSingleOfferUser(currentSingleOffer.user);
             await setSingleOfferCount(currentSingleOffer.user);
@@ -52,7 +54,7 @@ function activatedButton(element) {
     element.classList.add('active');
 }
 
-async function loadSingleOfferUser(profileId) {
+async function loadSingleOfferUser(profileId) {    
     let resp = await getData(PROFILE_URL + profileId + "/")
     if (resp.ok) {
         currentSingleOfferUser = resp.data

@@ -3,6 +3,7 @@ let currentUser;
 
 async function setUsers() {
     let userBusinessResp = await getData(BUSINESS_PROFILES_URL);
+    
     if (userBusinessResp.ok) {
         globalUsers = globalUsers.concat(userBusinessResp.data);
     }
@@ -13,15 +14,16 @@ async function setUsers() {
     }
 }
 
-function getUserInfo(id) {
+function getUserInfo(id) {    
     return globalUsers.find(user => user.user.pk === id) || null
 }
 
 async function setCurrentUser() {
     if (getAuthUserId()) {
         let response = await getData(PROFILE_URL + getAuthUserId() + "/");
+
         if (response.ok) {
-            currentUser = response.data;
+            currentUser = response.data;            
         } else {
             showToastMessage(true, ['Eigene User konnte nicht gefunden werden'])
         }
